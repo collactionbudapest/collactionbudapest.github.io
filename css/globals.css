@@ -1,0 +1,88 @@
+/* ====== Setting text settings ======> */
+
+html {
+  font-size: 16px;
+  line-height: 0%;
+
+  --primary-color: #864280;
+  --primary-color-hover: #a852a0;
+  --secondary-color: #69a495;
+  --secondary-color-hover: #9cd7c8;
+  --tertiary-color-1: #2b2969;
+  --tertiary-color-2: #39368a;
+  --tertiary-color-3: #4643aa;
+  --tertiary-color-4: #5f5bbf;
+  --tertiary-color-5: #7f7ccc;
+  --tertiary-color-6: #9f9dd9;
+  --tertiary-color-7: #bfbee5;
+  --tertiary-color-8: #dfdef2;
+  --text-color-light-06: rgb(252, 252, 252, 0.6);
+  --text-color-light-07: rgb(252, 252, 252, 0.7);
+  --text-color-light-08: rgb(252, 252, 252, 0.8);
+  --text-color-light-09: rgb(252, 252, 252, 0.9);
+  --text-color-light-10: rgb(252, 252, 252, 1);
+  --text-color-dark: #2b2969;
+
+  --padding-inset-squish-l: 1rem 1.5rem;
+
+  --small-breakpoint: 600px;
+  --medium-breakpoint: 900px;
+  --large-breakpoint: 1200px;
+  --extra-large-breakpoint: 1536px;
+
+  --spacing-xxs: 0.125rem;
+  --spacing-xs: 0.25rem;
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 8rem;
+}
+@media screen and (min-width: 600px) {
+  /*--small-breakpoint*/
+  html {
+    font-size: 16px;
+  }
+}
+
+/*---------- background styles --------------*/
+
+.bg-tertiary-linear-dark {
+  /* Tertiary/Linear0103 */
+  background: linear-gradient(
+    270deg,
+    var(--tertiary-color-1) 30.81%,
+    var(--tertiary-color-2) 91.46%
+  );
+}
+
+.bg-tertiary-linear-medium {
+  /* Tertiary/Linear0305 */
+  background: linear-gradient(
+    270deg,
+    var(--tertiary-color-3) 0%,
+    var(--tertiary-color-4) 100%
+  );
+}
+
+.bg-tertiary-linear-light {
+  /* Tertiary/0608 */
+  background: linear-gradient(
+    285deg,
+    var(--tertiary-color-6) 8.38%,
+    var(--tertiary-color-7) 87.03%
+  );
+}
+
+.bg-tertiary-solid-dark {
+  /* Tertiary/Linear0103 */
+  background-color: var(--tertiary-color-1);
+}
+.bg-tertiary-solid-medium {
+  /* Tertiary/Linear0103 */
+  background-color: var(--tertiary-color-3);
+}
+.bg-tertiary-solid-light {
+  /* Tertiary/Linear0103 */
+  background-color: var(--tertiary-color-6);
+}

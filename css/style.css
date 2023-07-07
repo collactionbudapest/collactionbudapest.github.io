@@ -1,0 +1,384 @@
+/* ====== Debug help ======> */
+/* *:not(path):not(g) {
+  color: hsla(210, 100%, 100%, 0.9) !important;
+  background: hsla(210, 100%, 50%, 0.5) !important;
+  outline: solid 0.25rem hsla(210, 100%card-section, 100%, 0.5) !important;
+} */
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+/* ------ Margins, Paddings ------- */
+
+.frame-container {
+  padding: 1rem var(--margin);
+  position: relative;
+  overflow: hidden;
+}
+.content-padding-stack {
+  padding: var(--spacing-xl) 0;
+}
+main section:first-child {
+  padding-top: var(--spacing-xl);
+}
+@media screen and (min-width: 900px) {
+  /*--medium-breakpoint*/
+  .content-padding-stack {
+    padding: var(--spacing-xxl) 0;
+  }
+  main section:first-child {
+    padding-top: var(--spacing-s);
+  }
+}
+
+.card-section {
+  padding-top: var(--spacing-xl);
+}
+/*-----------Navigation-----------*/
+
+/*--styles--*/
+.menu,
+.submenu {
+  list-style-type: none;
+}
+.menu-text {
+  text-align: center;
+  padding: var(--padding-inset-squish-l);
+  background-color: transparent;
+}
+.menu-text:hover {
+  background-color: var(--primary-color-hover);
+}
+.menu-text:focus {
+  background-color: var(--primary-color);
+}
+.toggle {
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+/*--behavior--*/
+
+header {
+  /*--sticky---*/
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: fixed !important;
+  top: 0;
+  z-index: 99;
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mobile menu */
+.logo {
+  order: 0;
+  line-height: 0%;
+}
+.logo img {
+  width: auto;
+  height: 2.5rem;
+}
+.toggle {
+  order: 1;
+}
+.toggle,
+.toggle a {
+  display: block;
+}
+
+nav {
+  order: 2;
+  display: none;
+}
+nav.active {
+  display: block;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  display: -ms-flexbox;
+
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+nav.active .menu {
+  padding: 1rem;
+  gap: 1em;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+/* Desktop menu */
+@media screen and (min-width: 900px) {
+  /*--medium-breakpoint*/
+  header {
+    flex-wrap: nowrap;
+  }
+  nav {
+    display: inline;
+  }
+
+  .menu {
+    display: flex;
+    display: -ms-flexbox;
+
+    align-items: center;
+    gap: 0.5em;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .logo {
+    flex: 1;
+    order: 0;
+  }
+  .menu-item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .toggle {
+    display: none;
+  }
+}
+
+/* ====== Setting boxes behavior ======> */
+
+.alignstart {
+  align-items: flex-start;
+  -ms-flex-align: start;
+  -webkit-box-align: start;
+}
+
+.aligncenter {
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  justify-content: center;
+}
+
+/*---------- background image --------------*/
+
+#groupphoto {
+  background: url(../img/collaction-raczkeve.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#groupphoto2 {
+  background: url(../img/collaction-raczkeve-circle.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#lifestylephoto1 {
+  background: url(../img/chinatown-from-above.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#lifestylephoto2 {
+  background: url(https://images.unsplash.com/photo-1587614313085-5da51cebd8ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--tertiary-color-1);
+  opacity: 0.55;
+}
+
+.overlaytext {
+  position: relative;
+  padding: 6em 0;
+}
+
+/* ------- cards ------------*/
+
+.card-item {
+  --img-scale: 1.001;
+  position: relative;
+  border-radius: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 15px 0px;
+  background: var(--tertiary-color-3);
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2.3rem;
+  overflow: hidden;
+}
+
+.card-item:has(:hover, :focus) {
+  --img-scale: 1.03;
+  filter: brightness(108%);
+  box-shadow: rgba(0, 0, 0, 0.4) 4px 8px 25px 0px;
+}
+
+.card-item h3 {
+  margin-block-end: var(--spacing-m);
+}
+
+.flexible {
+  flex-grow: 1;
+}
+
+figure {
+  overflow: hidden;
+  border-radius: 0.3rem;
+
+  width: 100%;
+  height: auto;
+}
+
+.card-item figure {
+  margin-bottom: var(--spacing-l);
+  aspect-ratio: 1;
+}
+
+figure img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+figure.flotingimage {
+  padding: var(--spacing-l) 0rem;
+  align-items: center;
+  margin: auto 0;
+}
+@media screen and (min-width: 900px) {
+  /*--medium-breakpoint*/
+  figure.flotingimage {
+    max-width: 400px;
+  }
+}
+/************************ 
+Generic layout
+**************************/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 90; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  border-radius: 0.6rem;
+  background-color: var(--tertiary-color-4);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 3rem 2rem;
+  width: 90%; /* Could be more or less, depending on screen size */
+  overflow: hidden;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ------- icons ------------*/
+
+.facebook-icon,
+.email-icon {
+  /* position: fixed;
+  bottom: 20px; */
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facebook-icon a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.facebook-icon {
+  background-color: var(--primary-color);
+}
+
+.email-icon {
+  background-color: var(--primary-color);
+}
+
+.icon a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* ------- footer ------------*/
+
+footer {
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px -3px 8px;
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer.frame-container {
+  padding: 1.5rem var(--margin);
+}
